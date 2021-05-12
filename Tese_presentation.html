@@ -1,0 +1,3154 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The role of functional similarity for community assembly at multiple spatial scales</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yihui Xie" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+    <link href="libs/remark-css/ninjutsu.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="kunoichi2.css" type="text/css" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: center, middle, split-three
+&lt;style&gt;
+p.caption {
+  font-size:0.6em;
+}
+&lt;/style&gt;
+
+.row[
+.split-three[
+.column[
+.content[
+&lt;br&gt;
+&lt;img src="https://www.uerj.br/wp-content/uploads/2018/02/logomarca-uerj.png" width="50%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+]
+.column[
+.content[
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src="http://www.pgbv.uerj.br/wp-content/uploads/2020/08/cropped-header_pgbv_2020.png" style="display: block; margin: auto;" /&gt;
+]
+]
+.column[
+.content[
+&lt;br&gt;
+&lt;img src="helsinki.png" width="50%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+]
+]
+]
+.row[
+.content.vmiddle[
+## .center[The role of functional similarity for community assembly at multiple spatial scales]
+]
+]
+.row[
+.content[
+#### Caio Graco Rodrigues Leandro Roza
+##### Advisor: Marcelo Manzi Marinho
+##### Co-Advisor: Janne Soininen
+###### 12/05/2021 
+]
+]
+
+???
+Boa tarde, como alguns de vocês já sabem meu nome é Caio Graco e eu vou apresentar hoje os resultados da minha tese, onde nós estudamos o papel da similaridade funcional no processo de montagem de comunidades em diferentes escalas espaciais. 
+
+Essa tese foi orientada pelo professor marcelo manzi marinho na UERJ a co-orientada pelo professor janne soininen da universidade de helsinque.
+
+---
+layout:true
+class: left, top, split-two with-border
+
+
+.column[.split-four[
+.row.bg-main1[.content.vmiddle.center[
+# What's with the scale?
+]
+]
+.row.bg-main2[.content[
+Studying communities require the definition of &lt;b&gt;spatial and temporal scales&lt;/b&gt;.
+]]
+.row.bg-main3[.content[
+What are the mechanisms underlying patterns?
+]]
+.row.bg-main4[.content[
+Patterns result from mechanisms operating at different spatial and temporal scales than the those on which the patterns are observed .tiny[(LEVIN, 1992)].
+
+]]
+]]
+
+.column[
+.content.vmiddle.center[
+&lt;div class="figure" style="text-align: right"&gt;
+&lt;img src="img/scale.png" alt="Source: LEVIN 1992" width="100%" /&gt;
+&lt;p class="caption"&gt;Source: LEVIN 1992&lt;/p&gt;
+&lt;/div&gt;
+]
+]
+
+---
+class: gray-row2-col1 fade-row2-col1 gray-row3-col1 fade-row3-col1 gray-row4-col1 fade-row4-col1 fade-col2
+count:true
+
+???
+
+Para estudar ecologia de comunidades é necessário a determinação de escalas
+
+
+---
+class: gray-row3-col1 fade-row3-col1 gray-row4-col1 fade-row4-col1 fade-col2
+count:false
+
+???
+
+e requer que sejam estabelecidas escals espaciais e temporais como uma maneira de facilitar a construção de hipóteses e delineamento amostral.
+
+.
+---
+class: gray-row2-col1 fade-row2-col1 gray-row4-col1 fade-row4-col1 fade-col2
+count:false
+
+???
+
+Ainda assim, é dificil de explicar quais os mecanismos estão por trás do padrões observados
+
+---
+class: gray-row2-col1 fade-row2-col1 gray-row3-col1 fade-row3-col1 
+count:false 
+
+???
+
+Uma vez que esses padrões resultam de mecanismos que ocorrem em diferentes escalas daquelas que amostramos.
+
+Zooplankton, migração vertical na coluna d'agua, ciclos anuais, correntes oceânicas.
+---
+
+layout:true
+class: middle, split-three with-border
+.column[
+.split-two[
+.row.bg-main1[
+.content[
+### What about the functional similarity?
+ &lt;i&gt;"We must consider the distinctive characters and the general nature of plants from the point of view of their morphology, their behaviour under external conditions, their mode of generation, and the whole course of their life"&lt;/i&gt;
+.right[.tiny[
+Theophrastus, 300 B.C]
+]
+]
+]
+.row.bg-light-white70[ 
+.content.nopadding[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/niche.png" alt="Source: By Sylvia Freeman" width="70%" /&gt;
+&lt;p class="caption"&gt;Source: By Sylvia Freeman&lt;/p&gt;
+&lt;/div&gt;
+]]
+]
+]
+.column[
+.split-two.border-white[
+.row[
+.content.nopadding[
+### .tiny[.center[Difference allows coexistence.]]  
+&lt;br&gt;
+&lt;img src="Tese_presentation_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+]
+
+.row[
+.content.nopadding[
+
+### .tiny[.center[What if species are similar?]]
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="neutral.jpg" alt="Source: VANDERMEER 2006" width="90%" /&gt;
+&lt;p class="caption"&gt;Source: VANDERMEER 2006&lt;/p&gt;
+&lt;/div&gt;
+]
+]
+]
+]
+
+.column[.content.nopadding[
+&lt;br&gt;
+One can group species in **functional groups**...
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="mbfg.png" alt="Source: KRUK et al. 2010" width="90%" /&gt;
+&lt;p class="caption"&gt;Source: KRUK et al. 2010&lt;/p&gt;
+&lt;/div&gt;
+&lt;br&gt;
+.right[...or measure **individual traits** and match them with environmental template]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="multi_niche.gif" alt="Source: BLONDER et al. 2014" width="80%" /&gt;
+&lt;p class="caption"&gt;Source: BLONDER et al. 2014&lt;/p&gt;
+&lt;/div&gt;
+]]
+---
+class: fade-row2-col1 fade-row1-col2 fade-row2-col2 hide-col3
+count:true
+
+???
+Além disso, para compereender esses padrões, também é preciso estudar as características de cada espécies, como por exemplo, a morfologia, fisiologia e fenologia, comumente chamos de atributos funcionais.
+---
+class: fade-row1-col2 fade-row2-col2 hide-col3
+count:false
+???
+isso porquê essas características vão determinar a maneira com a qual as espécies interagem com o ambiente e entre si. Por exemplo, o tamanho da pata e o peso de um pássaro, vão determinar o tipo de árvore que esses indivíduos podem pousar, dentre outras coisas.
+
+---
+class: fade-row2-col1 fade-row2-col2 hide-col3
+count:false
+
+???
+Utilizando essas características é possível estimar o nível de sobreposição de nicho em uma comunidade e compreender, em escala local,  a coexistencia de espécies.
+---
+class: fade-row2-col1 fade-row1-col2 hide-col3
+count:false
+
+???
+Em escala regional,as metacomunidades, ou seja, comunidades conectadas por dispersão de organismos, vão apresentar fluxo contante de indivíduos, e nesse caso a substituição de uma espécie por um par funcionalmente equivalente, se dá por processos estocasticos, como imigração, extinção local, especiação, etc.
+
+---
+class: fade-row2-col1 fade-row1-col2 fade-row2-col2
+count:false
+
+???
+Existem pelo menos duas linhas de estudo que trabalham esses conceitos do ponto de vista das características das espécies. Uma delas consiste na utilização de grupos funcionais préviamente estabelecidos baseados a partir de observações da maneira com a qual as espécies respondem às variações ambientais.
+
+Por outro lado, pode-se medir os atributos funcionais de cada espécie diretamente,e relacionar isso com as variáveis abióticas ou tipos de habitat estudados.
+---
+layout:true
+class:split-three with-border border-black
+
+.column[.split-two[
+.row.bg-main1[.content.nopadding[
+### Emergent neutrality
+&lt;br&gt;
+&lt;br&gt;
+"Species must evolve to become *sufficiently similar* or *sufficietly different* to coexist."
+.tiny[.right[SCHEFFER; VAN NES; VERGNON, 2018]]
+]]
+.row.bg-light-gray[.content.nopadding[
+&lt;br&gt;
+&lt;div class="figure" style="text-align: left"&gt;
+&lt;img src="EN_evo.png" alt="Source: SCHEFFER; VAN NES; VERGNON, 2018" width="70%" /&gt;
+&lt;p class="caption"&gt;Source: SCHEFFER; VAN NES; VERGNON, 2018&lt;/p&gt;
+&lt;/div&gt;
+]]
+]]
+
+.column[.split-two[.row[.content.nopadding[
+### .tiny[.center[Modelling evidence]]
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="EN.png" alt="Source: MATTHEWS &amp;amp; WHITTAKER, 2014" width="70%" /&gt;
+&lt;p class="caption"&gt;Source: MATTHEWS &amp; WHITTAKER, 2014&lt;/p&gt;
+&lt;/div&gt;
+
+]
+]
+
+.row.bg-main4[
+.content.nopadding[
+### .tiny[.center[.white[Empirical evidence]]]
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="en_segura.png" alt="Source: SEGURA et al., 2010" width="70%" /&gt;
+&lt;p class="caption"&gt;Source: SEGURA et al., 2010&lt;/p&gt;
+&lt;/div&gt;
+]
+]
+]
+]
+
+.column.bg-main5[
+
+.content.nopadding[
+###.black[Body size as niche axis...]
+&lt;br&gt;
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="en_bs.png" alt="Source: SEGURA et al., 2010" width="90%" /&gt;
+&lt;p class="caption"&gt;Source: SEGURA et al., 2010&lt;/p&gt;
+&lt;/div&gt;
+]
+]
+
+
+---
+class:  fade-row2-col1 fade-row1-col2 fade-row2-col2 gray-row2-col2 hide-col3
+count:true
+
+???
+Mais recentement, foi proposto que as espécies evoluem em direção a um número limitado de grupos funcionais, e essa evolução converge para que as espécies evitem a competição.
+---
+class:   fade-row1-col2 fade-row2-col2 gray-row2-col2 hide-col3
+count:false
+
+???
+Ou as espécies se tornam diferentes o suficientes para ocupar diferentes espaços de nicho, ou elas se tornam parecidas de maneira que a competição entre espécies se assemelhe a competição intraespecifica
+---
+class:  fade-row2-col1  fade-row2-col2 gray-row2-col2 hide-col3
+count:false
+
+???
+Nesse sentido, foi proposto que ao ordenar as espécies ao longo de um eixo de nicho, as espécies apresentariam agrupamentos com picos de abundancia, nos quais as espécies presentes estão adaptadas às condições de nicho, e vales de espécies com baixa abundancia que são espécies que não são favorecidas pelas condições abióticas, mas são inseridas e mantidas na comunidade por dispersão.
+
+---
+class:  fade-row2-col1 fade-row1-col2 fade-row1-col3 hide-col3
+count:false
+---
+class:  fade-row2-col1 fade-row1-col2 fade-row2-col2 gray-row2-col2 
+count:false
+
+???
+
+Porém, os estudos que corroboram a neutralidade emergente, utilizam apenas o tamanho do organismo para contrutir o eixo de nicho, e não há estudos que explorem os agrupamentos utilizando multiplas dimensões do espaço funcional.
+
+Além disso, também seria importante de compreender em quais escalas espaciais a inserção de espécies por dispersão ocorre, a pra isso é preciso compreender um dos padrões mais observados da biogeografia, que é ...
+
+---
+layout:true
+class: left, top, split-three with-border 
+
+.column[.split-two[
+.row.bg-main1[
+.content.nopadding[
+### Distance decay of similarity
+&lt;br&gt;
+
+.small["The similarity between two observations often decreases or decays as the distance between them increases, a pattern long recognized in the geographical literature and once called ‘the first law of geography’."]
+.right[.tiny[NEKOLA &amp; WHITE, 1999]]
+]
+]
+.row[
+.content.nopadding[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="DD_nekola.png" alt="Source: NEKOLA &amp;amp; MCGILL, 2014" width="55%" /&gt;
+&lt;p class="caption"&gt;Source: NEKOLA &amp; MCGILL, 2014&lt;/p&gt;
+&lt;/div&gt;
+]]
+
+]]
+
+.column[
+.split-two.border-white[
+.row[ 
+.content.vmiddle.center[
+##.black[Environment &lt;br&gt; vs.&lt;br&gt; dispersal]
+]
+]
+.row.bg-main1[
+.content.vmiddle.center[
+#.small[Functional traits&lt;br&gt;vs.&lt;br&gt;Taxonomic identity]
+]
+]
+]]
+
+.column[
+.split-four[
+.row.bg-main1[
+.content[Spatial scale&lt;br&gt;.tiny[(NEKOLA; WHITE, 1999; NEKOLA; MCGILL, 2014)].]
+]
+.row.bg-main2[
+.content[Latitude&lt;br&gt;.tiny[(QIAN, 2009; QIAN; BADGLEY; FOX, 2009)].]
+]
+.row.bg-main3[
+.content[Local and/or regional diversity&lt;br&gt;.tiny[(HILLEBRAND, 2004; SOININEN, 2010)].]
+]
+.row.bg-main4[
+.content[Ecosystem type&lt;br&gt;.tiny[(CORNELL; HARRISON, 2013)].]
+]
+]
+]
+---
+class: fade-row2-col1 hide-row1-col2 hide-row2-col2 gray-row1-col3 gray-row2-col3 gray-row3-col3 gray-row4-col3
+count:true
+
+???
+O decaimento da similaridade com a distância, ou seja, comunidades apresentam diferentes compositições na medida que a distancia  geografica entre elas aumenta
+
+---
+class: hide-row1-col2 hide-row2-col2 gray-row1-col3 gray-row2-col3 gray-row3-col3 gray-row4-col3
+count:false
+???
+
+Existem diferentes tipos de decaímento, mas o mais comum deles é o decaímento exponencial, que ocorre quando a área de estudo cobre mais do que uma metacomunidade.
+---
+class: hide-row2-col2 gray-row1-col3 gray-row2-col3 gray-row3-col3 gray-row4-col3
+count:false
+???
+
+Isso pode ser explicado tanto pelo fato de que o aumento da distância implica na modificação das condições de nicho, ou pelo simples fato de as espécies serem limitadas em sua dispersão.
+
+Alguns fatores geográficos também vão afetar esse padrão, por exemplo:
+---
+class: hide-row2-col2 gray-row2-col3 gray-row3-col3 gray-row4-col3
+count:false
+
+---
+class: hide-row2-col2 gray-row1-col3 gray-row3-col3 gray-row4-col3
+count:false
+
+---
+class: hide-row2-col2 gray-row1-col3 gray-row2-col3  gray-row4-col3
+count:false
+---
+class: hide-row2-col2 gray-row1-col3 gray-row2-col3 gray-row3-col3
+count:false
+---
+class: gray-row1-col3 gray-row2-col3 gray-row3-col3 gray-row4-col3
+count:false
+
+???
+
+Uma forma de entender esse balanço entre dispersão e nicho é comparando o decaimento da similaridade taxonomica e funcional.Baseando-se na ideia de que comunidades limitadas por dispersão em um ambiente relativamente homogeneo apresentariam um decaímento taxonomico mais expressivo do que um decaimento da similaridade funcional.
+---
+
+layout:true
+class: left, middle, split-four  with-border
+
+.row.bg-main1[.content.vmiddle[
+# Objective
+
+The overarching aim of this thesis is to explore the role of functional similarity in the community assembly processes at local, regional, and global scale.
+]]
+.row.bg-main2[.content[
+.left-column[ 
+### .small[.lightest-blue[Local scale &lt;br&gt; .tiny[(Chapter I)]]]
+]
+.right-column[
+Whether species with similar functional traits respond similarly to environment, and whether their abundance varies stochastically.
+]
+]]
+
+.row.bg-main3[.content[
+.left-column[
+### .small[.light-blue[Regional scale &lt;br&gt; .tiny[(Chapter II)]]]
+]
+.right-column[
+
+whether functional composition relates stronger to environmental constraints than taxonomic composition, and whether functional traits respond to the dispersal dynamics of the ecosystem.
+
+]
+]]
+
+.row.bg-main4[.content[
+.left-column[ 
+### .small[.navy[Global scale &lt;br&gt; .tiny[(Chapter III)]]]
+]
+.right-column[
+Whether the balance between taxonomic and functional response to environment is consistent across multiple organisms, whether the geographic factors e.g., latitude, realm, and spatial extent affects the community response to environmental and spatial gradients
+]
+]]
+
+---
+class: fade-row2 gray-row2 fade-row3 gray-row3 fade-row4 gray-row4
+count:true
+---
+class:  fade-row1 fade-row3 gray-row3 fade-row4 gray-row4
+count:false
+---
+class: fade-row1 fade-row2 gray-row2  fade-row4 gray-row4
+count:false
+---
+class: fade-row1 fade-row2 gray-row2 fade-row3 gray-row3 
+count:false
+---
+layout:false
+class: center, middle, inverse
+
+# .white[Functional similarity at the local scale]
+
+###.white[Clumpy coexistence – the role of functional similarity to community assembly.]
+
+####.white[Accepted in].bold[PCI Ecology]
+
+---
+class:inverse
+### Overview
+
+
+- Eco-evolutionary dynamics .tiny[(GRAVEL et al., 2006; HUBBELL, 2006; SCHEFFER; VAN NES, 2006)].
+
+- Empirical evidence is still scarce .tiny[(SCHEFFER et al. 2018)].
+ 
+- Body size vs multidimensional traits.
+
+- Phytoplankton as a model organism.
+
+- Functional groups as a way to test neutrality
+
+- Functional traits as a way to test neutrality
+
+- Rivers as heterogeneous systems.
+
+???
+Bom, no capítulo 1 nós discutimos sobre a similaridade funcional do posto de vista da neutralidade emergente. Como dito anteriormente, a neutralidade emergente é um resultados de dinâmicas eco-evolutivas, our seja, as espécies evoluem de maneira a se agrupar em diferentes grupos funcionais e dentro desses grupos, as interações competitivas são quase neutras. 
+
+As evidências pra esse modelo, ainda que existam são incipientes. Além disso, os estudos utlizam o tamanho do corpo como traço, mas da mesma forma que o nicho é multidimensional, os arranjos funcionais das comunidades também o são.
+
+Nesse sentido, o fitoplâncton é um ótimo organismos teste tanto porque tem um curto tempo de geração, quanto porque as relações entre traços funcionais e condições ambientais são bastante conhecidas.
+
+Já existem evidências empiricas para o fitoplâncton de lago e marinho, mas não há nenhum estudo para o fitoplâncton de rios, ainda que rios sejam sistemas bastante heterogeneos e que podem contribuir empiricamente para a validade da teoria em sistemas não estáveis.
+
+---
+layout:true
+class:split-five with-border
+.row.bg-main1[.content.vmiddle[
+# Hypotheses]]
+.row.bg-main2[
+.content.vmiddle.center[
+ .bold[H1] – There are peak aggregations of species abundance (i.e., clumps) along the body size axis of phytoplankton in the river that remain constant across space and time as a result of eco-evolutionary processes.
+]]
+.row.bg-main3[
+.content.vmiddle.center[
+.bold[H2] – Pairwise-differences in species abundances increase with functional dissimilarity at the community-level but not at the clump level because species within the same clump behave in a quasi-neutral state.
+]]
+.row.bg-main4[
+.content.vmiddle.center[
+.bold[H3] – Species abundance increases with functional distinctiveness of the species with respect to other species within the clumps.
+]]
+.row.bg-main1[.content[
+
+]]
+---
+class: fade-row3 gray-row3 fade-row4 gray-row4
+---
+class: fade-row2 gray-row2 fade-row4 gray-row4
+count:false
+---
+class: fade-row3 gray-row3 fade-row2 gray-row2
+count:false
+---
+
+layout:false
+class:left, top
+.left-column[
+### Methods
+Nine sampling sites along the river channel
+
+Monthly samples between May 2012 - Apr 2013
+
+&lt;img style="position: absolute; bottom:4em; left=0em" src="img/map_cap1.png"; width="25%"&gt;
+
+]
+.right-column[
+&lt;img src="img/method_cap1.png" width="95%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+---
+class:top
+# Results
+&lt;br&gt;
+&lt;br&gt;
+
+A total of **150 species** were observed distributed in six functional groups 
+
+
+|MBFG |Number of species |Representative taxa                                |
+|:----|:-----------------|:--------------------------------------------------|
+|I    |9                 |*Chroococcales* sp., *Chroococcus* sp.             |
+|III  |3                 |*Limnothrix* sp.                                   |
+|IV   |60                |*Pseudanabaena limnetica*, *seudanabaena catenata* |
+|V    |13                |*Euglena* sp., *Cryptomonas* sp.                   |
+|VI   |57                |*Cymbella* sp., *Synedra* sp.                      |
+|VII  |8                 |*Dictyosphaerium* sp.                              |
+
+---
+class:split-two
+
+.column[.content[
+#Results
+
+- Axes summarised spatial and seasonal patterns;
+
+- Functional groups did not overlap;
+
+- Silica, flagella and size-related traits were the most important.
+
+- MBFG VI = Silica; MBFG V = Flagella, MBFG IV = size-traits;
+
+]]
+.column[.content.vmiddle.center[
+&lt;img src="cap1_rlq.png" width="100%" /&gt;
+]]
+
+---
+class:split-two
+layout:true
+
+.column[.split-five[
+.row.bg-main1[.content[
+### Results
+- Significant clumps in the same range as other studies .tiny[(SEGURA et al., 2011; 2012)].
+]]
+.row.bg-main2[.content[
+- More than one functional group per clump .tiny[(BARABÁS et al. 2013)]. 
+- MBFG IV, V and VI in different clumps.
+]]
+.row.bg-main3[.content[
+- Niche partitioning for overall community, and for Clump I at the .bold[upper course].
+]]
+.row.bg-main4[.content[
+- Different size class during wet season (Ecological compartments).
+]]
+.row.bg-main5[.content[
+- Significant increase in abundance given functional distinctiveness .bold[(not for clump II)].
+]]
+]]
+
+.column[
+.content[
+.panelset[
+  .panel[.panel-name[Seasonal]
+&lt;img src="cap1_clump_season.png" width="1845" /&gt;
+]
+  .panel[.panel-name[Spatial]
+&lt;img src="cap1_clump_spatial.png" width="1845" /&gt;
+]
+  .panel[.panel-name[Mantel]
+.tiny[
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#cqxswigkcb .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 8px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 500px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_heading {
+  background-color: #85C1E9;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_title {
+  color: #FFFFFF;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#cqxswigkcb .gt_subtitle {
+  color: #FFFFFF;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#cqxswigkcb .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #85C1E9;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#cqxswigkcb .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #85C1E9;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#cqxswigkcb .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#cqxswigkcb .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#cqxswigkcb .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#cqxswigkcb .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #ffffcc;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#cqxswigkcb .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #ffffcc;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#cqxswigkcb .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#cqxswigkcb .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#cqxswigkcb .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#cqxswigkcb .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: dashed;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#cqxswigkcb .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cqxswigkcb .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#cqxswigkcb .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#cqxswigkcb .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#cqxswigkcb .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#cqxswigkcb .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#cqxswigkcb .gt_left {
+  text-align: left;
+}
+
+#cqxswigkcb .gt_center {
+  text-align: center;
+}
+
+#cqxswigkcb .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#cqxswigkcb .gt_font_normal {
+  font-weight: normal;
+}
+
+#cqxswigkcb .gt_font_bold {
+  font-weight: bold;
+}
+
+#cqxswigkcb .gt_font_italic {
+  font-style: italic;
+}
+
+#cqxswigkcb .gt_super {
+  font-size: 65%;
+}
+
+#cqxswigkcb .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="cqxswigkcb" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="3" class="gt_heading gt_title gt_font_normal" style>Pairwise differences in abundance ~ Functional similarity</th>
+    </tr>
+    <tr>
+      <th colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Grouping</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Mantel r</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">p-value</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">Seasonal patterns - Dry season</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump I</td>
+      <td class="gt_row gt_right">-0.14</td>
+      <td class="gt_row gt_right">0.71</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump II</td>
+      <td class="gt_row gt_right">0.13</td>
+      <td class="gt_row gt_right">0.09</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="background-color: #5499C7; font-weight: bold;">Overall</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.25</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">Seasonal patterns - Wet Season</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump I</td>
+      <td class="gt_row gt_right">-0.16</td>
+      <td class="gt_row gt_right">0.69</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump II</td>
+      <td class="gt_row gt_right">0.06</td>
+      <td class="gt_row gt_right">0.24</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="background-color: #5499C7; font-weight: bold;">Overall</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.29</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">Spatial patterns - Upper course</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="background-color: #5499C7; font-weight: bold;">Clump I</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.23</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.02</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump II</td>
+      <td class="gt_row gt_right">&mdash;</td>
+      <td class="gt_row gt_right">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="background-color: #5499C7; font-weight: bold;">Overall</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.17</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">Spatial patterns - Medium course</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump I</td>
+      <td class="gt_row gt_right">-0.16</td>
+      <td class="gt_row gt_right">0.65</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump II</td>
+      <td class="gt_row gt_right">0.06</td>
+      <td class="gt_row gt_right">0.22</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="background-color: #5499C7; font-weight: bold;">Overall</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.21</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="3" class="gt_group_heading">Spatial patterns - Lower course</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump I</td>
+      <td class="gt_row gt_right">&mdash;</td>
+      <td class="gt_row gt_right">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Clump II</td>
+      <td class="gt_row gt_right">-0.23</td>
+      <td class="gt_row gt_right">0.75</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left" style="background-color: #5499C7; font-weight: bold;">Overall</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.33</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+]]
+  .panel[.panel-name[GLM]
+  .tiny[
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#hyxrilwogt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 8px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_heading {
+  background-color: #85C1E9;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_title {
+  color: #FFFFFF;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hyxrilwogt .gt_subtitle {
+  color: #FFFFFF;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hyxrilwogt .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #85C1E9;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hyxrilwogt .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #85C1E9;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hyxrilwogt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hyxrilwogt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hyxrilwogt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hyxrilwogt .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #ffffcc;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hyxrilwogt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #ffffcc;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hyxrilwogt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hyxrilwogt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hyxrilwogt .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hyxrilwogt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: dashed;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#hyxrilwogt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hyxrilwogt .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hyxrilwogt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hyxrilwogt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#hyxrilwogt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hyxrilwogt .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#hyxrilwogt .gt_left {
+  text-align: left;
+}
+
+#hyxrilwogt .gt_center {
+  text-align: center;
+}
+
+#hyxrilwogt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hyxrilwogt .gt_font_normal {
+  font-weight: normal;
+}
+
+#hyxrilwogt .gt_font_bold {
+  font-weight: bold;
+}
+
+#hyxrilwogt .gt_font_italic {
+  font-style: italic;
+}
+
+#hyxrilwogt .gt_super {
+  font-size: 65%;
+}
+
+#hyxrilwogt .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="hyxrilwogt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal" style>log10 Biovolume ~ functional distinctiveness</th>
+    </tr>
+    <tr>
+      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">variable</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Intercept</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Clump I</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Clump II</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Interaction</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="5" class="gt_group_heading">Seasonal patterns - Dry season</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Coefficient</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">-18.39</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">16.44</td>
+      <td class="gt_row gt_right">12.29</td>
+      <td class="gt_row gt_right">-11.90</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">p-value</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right">0.30</td>
+      <td class="gt_row gt_right">0.34</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="5" class="gt_group_heading">Seasonal patterns - Wet season</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Coefficient</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">-20.42</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">18.33</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">17.73</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">-17.83</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">p-value</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.02</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="5" class="gt_group_heading">Spatial patterns - Upper course</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Coefficient</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">-7.26</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">5.68</td>
+      <td class="gt_row gt_right">&mdash;</td>
+      <td class="gt_row gt_right">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">p-value</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right">&mdash;</td>
+      <td class="gt_row gt_right">&mdash;</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="5" class="gt_group_heading">Spatial patterns - Medium course</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Coefficient</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">-16.64</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">14.46</td>
+      <td class="gt_row gt_right">11.61</td>
+      <td class="gt_row gt_right">-11.12</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">p-value</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.02</td>
+      <td class="gt_row gt_right">0.29</td>
+      <td class="gt_row gt_right">0.34</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="5" class="gt_group_heading">Spatial patterns - Lower course</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">Coefficient</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">-12.52</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">9.65</td>
+      <td class="gt_row gt_right">5.77</td>
+      <td class="gt_row gt_right">-4.57</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">p-value</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.01</td>
+      <td class="gt_row gt_right" style="background-color: #5499C7; font-weight: bold;">0.06</td>
+      <td class="gt_row gt_right">0.48</td>
+      <td class="gt_row gt_right">0.59</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+]
+]
+
+]
+]
+]
+---
+class:fade-row2-col1 fade-row3-col1 fade-row4-col1 fade-row5-col1
+---
+class: fade-row3-col1 fade-row4-col1 fade-row5-col1
+count:false
+---
+class:fade-row2-col1 fade-row4-col1 fade-row5-col1
+count:false
+---
+class:fade-row2-col1 fade-row3-col1 fade-row5-col1
+count:false
+---
+class:fade-row2-col1 fade-row3-col1 fade-row4-col1
+count:false
+---
+layout:true
+class:split-two
+
+.row[.content[
+# Conclusions
+
+ - Emergent neutrality is a likely mechanism to explain species coexistence in an open and environmentally heterogeneous ecosystem.
+ 
+ - The significance and dominance of the clumps were related to the environmental conditions.
+ 
+ - Use of MBFGs and trait dimensions helps to unveil the quasi-neutral patterns.
+]]
+.row[.content[
+### Future directions
+
+ - Empirical studies of long-term data at finer sample scale.
+ 
+ - Include intraspecific trait variations?
+]]
+---
+class: hide-row2
+count:true
+---
+
+---
+
+layout:false
+class: center, middle, inverse
+
+# .white[Functional similarity at the regional scale]
+###  .white[Functional rather than taxonomic diversity reveals changes in the phytoplankton community of a large dammed river.]
+#### .white[Published in] .yellow[Ecological indicators]
+
+---
+class:inverse split-two
+
+.column[.content[
+### Overview
+
+- Phytoplankton as model organism.
+
+- Dams as environmental constraint.
+
+- Balance between dispersal and niche differences.
+
+&lt;img src="img/dam_cap2.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]]
+
+
+.column[.content[ 
+
+### Community similarity and partition (Turnover and Nestedness).
+
+&lt;img src="img/beta_partition.gif" width="60%" style="display: block; margin: auto;" /&gt;
+]
+]
+???
+No segundo capítulo nós utilizamos a comundidade fitoplanctônica para testar a relação entre a composição funcional e a composição taxonomica às diferentes variações ambientais. Pra isso nós consideramos um rio impactado por multiplas barragens, uma vez que as barragens vão estar relacionadas tanto à limitação por dispersão quanto as variações ambientais. 
+A perda de similaridade pode ocorrer através de dois mecanismos, a substituição de espécies ou traços (chamado turnover), e a perda ou ganho de espécies ou traços (chamado nestedness). Em geral, esses dois mecanismos estão sempre presentes, mas o balanço entre eles é o que vai determinar os processos que a comunidade está passando. 
+---
+layout:true
+class:split-five with-border
+.row.bg-main1[.content.vmiddle[
+# Hypotheses]]
+.row.bg-main2[
+.content.vmiddle.center[
+ .bold[H&lt;sub&gt;1a&lt;/sub&gt;] – Taxonomical turnover is higher than functional turnover especially in the dam-free stretches of the river because the river flow selects for a random subset of functionally redundant species, i.e., species functionally adapted to turbulent environments.
+]]
+.row.bg-main3[
+.content.vmiddle.center[
+.bold[H&lt;sub&gt;1b&lt;/sub&gt;] – The lentic-lotic gradient promoted by river damming increases the functional nestedness below the dam because species with traits adapted to lentic environments will be filtered as water flow increases.
+]]
+.row.bg-main4[
+.content.vmiddle.center[
+.bold[H&lt;sub&gt;2&lt;/sub&gt;] – Dam-induced flow regime leads to higher functional diversity towards the dam because the reduction in water flow allows species with different traits combinations to colonize the increasingly lentic-stretches.
+]]
+.row.bg-main1[.content[
+
+]]
+---
+class: fade-row3 gray-row3 fade-row4 gray-row4
+---
+class: fade-row2 gray-row2 fade-row4 gray-row4
+count:false
+---
+class: fade-row3 gray-row3 fade-row2 gray-row2
+count:false
+---
+
+layout:false
+class:split-two
+
+.column[.split-five[
+.row.bg-main1[.content[
+
+# Methods
+210 sampling sites (every 5 km) crossing five dams in total.
+]]
+.row.bg-main2[.content[
+Reservoirs had heterogenous characteristics
+]]
+.row.bg-main3[.content[
+Study was divided in two scales
+]]
+.row.bg-main4[.content[
+Phytplankton samples, environmental variables and land-use
+]]
+.row.bg-main5[.content[
+Watercourse distance and distance from the dam.
+]]
+]]
+.column[.content[
+.panelset[
+  .panel[.panel-name[Map]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="cap2_map.png" alt="Souce: GRACO-ROZA et al. 2020" width="100%" /&gt;
+&lt;p class="caption"&gt;Souce: GRACO-ROZA et al. 2020&lt;/p&gt;
+&lt;/div&gt;
+]
+.panel[.panel-name[Reservoirs]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="cap2_table1.png" alt="Souce: GRACO-ROZA et al. 2020" width="100%" /&gt;
+&lt;p class="caption"&gt;Souce: GRACO-ROZA et al. 2020&lt;/p&gt;
+&lt;/div&gt;
+]
+.panel[.panel-name[Variables]
+.pull-left.bg-main1[.bold[Local variables]
+- Turbidity
+- Ammonium
+- Soluble reactive phosphorus
+- Total phosphorus
+- Silica
+- pH 
+- Water temperature]
+
+.pull-right.bg-main2[.bold[Phytoplankton traits]
+- Volume
+- Surface
+- Surface volume ratio
+- Maximum linear dimension
+- Flagella
+- Mucilage
+- Aerotopes]
+
+.pull-left.bg-main3[.bold[Land use]
+- Natural
+- Pasture
+- Urban
+- Agriculture]
+
+.pull-right.bg-main4[.bold[Distance variables]
+- Watercourse distance
+- Distance from the nearest dam
+]
+
+]]
+
+]
+]
+]
+]
+---
+class:split-two
+
+.column[.content[
+### Methods (Hypothesis testing)
+
+.bold[Both scales]
+
+.pull-left[
+- Community distinctiveness
+
+- Functional dispersion &lt;br&gt;(functional diversity).
+
+- Shape of relationship &lt;br&gt; (Linear, quadratic, breakpoint) 
+
+- Boosted regression trees &lt;br&gt; (Variable importance)
+
+]
+.pull-right[
+&lt;img src="img/cap2_dist.png" width="1000%" style="display: block; margin: auto;" /&gt;
+]
+&lt;br&gt;
+.bold[Only reservoir scale]
+
+- Community weighted means
+- Non-metric dimensional scaling with general additive models
+
+]]
+ 
+.column[.content.vmiddle.center[
+&lt;img src="img/cap2_method.png" width="70%" /&gt;
+]]
+
+
+
+???
+Para testar nossas hipóteses em escala regional, nós utilizamos a distinção da comunidade que pode ser interpretada como a contribuição de uma amostra para a dissimilaridade regional. T
+
+---
+class:split-two
+
+.column[.content[
+### Results
+
+- Taxonomic distance decay
+
+- Functional nestedness below Funil reservoir .tiny[(KREB; BUDIONO, 2005; DA SILVA et al., 2015)].
+
+- Functional dispersion increase after the joint of tributaries.
+
+- Taxonomic nestedness.
+
+- Local variables explained about 50 – 60%  of the taxonomic community distinctiveness.
+
+- Functional dispersion had the highest explained deviance of the functional indices on BRT (20.8%) 
+
+- Land use was an important driver of functional diversity.
+]]
+
+.column[.content.nopadding[
+.panelset[
+  .panel[.panel-name[Shape of the curve]
+&lt;img src="Tese_presentation_files/figure-html/unnamed-chunk-28-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[Variable importance]
+.tiny[
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#jembmykhqm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 8px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_heading {
+  background-color: #85C1E9;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_title {
+  color: #FFFFFF;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jembmykhqm .gt_subtitle {
+  color: #FFFFFF;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jembmykhqm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #85C1E9;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jembmykhqm .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #85C1E9;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jembmykhqm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jembmykhqm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jembmykhqm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jembmykhqm .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #ffffcc;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jembmykhqm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #ffffcc;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jembmykhqm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jembmykhqm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jembmykhqm .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jembmykhqm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: dashed;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#jembmykhqm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jembmykhqm .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jembmykhqm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jembmykhqm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#jembmykhqm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jembmykhqm .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#jembmykhqm .gt_left {
+  text-align: left;
+}
+
+#jembmykhqm .gt_center {
+  text-align: center;
+}
+
+#jembmykhqm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jembmykhqm .gt_font_normal {
+  font-weight: normal;
+}
+
+#jembmykhqm .gt_font_bold {
+  font-weight: bold;
+}
+
+#jembmykhqm .gt_font_italic {
+  font-style: italic;
+}
+
+#jembmykhqm .gt_super {
+  font-size: 65%;
+}
+
+#jembmykhqm .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="jembmykhqm" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="8" class="gt_heading gt_title gt_font_normal" style>Boosted regression trees at the river scale</th>
+    </tr>
+    <tr>
+      <th colspan="8" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1"></th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">TCD<sub>Total</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">TCD<sub>Turnover</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">TCD<sub>Nestedness</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">FCD<sub>Total</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">FCD<sub>Turnover</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">FCD<sub>Nestedness</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">F<sub>Dispersion</sub></span>
+      </th>
+    </tr>
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">23.7%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">33.53%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">25.7%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">6.9%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">2.1%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">10.3%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">20.8%</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="8" class="gt_group_heading">Local variables</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Turb</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">5.8</td>
+      <td class="gt_row gt_right" style="background-color: #A7D4FA; color: #000000;">6.6</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #D3EAFC; color: #000000;">2.2</td>
+      <td class="gt_row gt_right" style="background-color: #8CC8F9; color: #000000;">6.8</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">8.2</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">NH4</td>
+      <td class="gt_row gt_right" style="background-color: #81C2F8; color: #000000;">15.0</td>
+      <td class="gt_row gt_right" style="background-color: #8CC8F9; color: #000000;">8.9</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #48A7F5; color: #000000;">7.2</td>
+      <td class="gt_row gt_right" style="background-color: #63B4F6; color: #000000;">9.4</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">SRP</td>
+      <td class="gt_row gt_right" style="background-color: #DEEFFD; color: #000000;">6.3</td>
+      <td class="gt_row gt_right" style="background-color: #BFE0FB; color: #000000;">4.4</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #1F8AE7; color: #FFFFFF;">10.1</td>
+      <td class="gt_row gt_right" style="background-color: #379FF4; color: #000000;">13.2</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">TP</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #C4E3FB; color: #000000;">3.9</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">30.6</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">1.6</td>
+      <td class="gt_row gt_right" style="background-color: #7FC1F8; color: #000000;">7.7</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">27.8</td>
+      <td class="gt_row gt_right" style="background-color: #1F8EEB; color: #FFFFFF;">18.2</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Si</td>
+      <td class="gt_row gt_right" style="background-color: #ACD7FA; color: #000000;">11.1</td>
+      <td class="gt_row gt_right" style="background-color: #A8D5FA; color: #000000;">6.5</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #45A6F5; color: #000000;">7.3</td>
+      <td class="gt_row gt_right" style="background-color: #96CCF9; color: #000000;">6.2</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #5DB1F6; color: #000000;">14.0</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">pH</td>
+      <td class="gt_row gt_right" style="background-color: #B0D9FB; color: #000000;">10.7</td>
+      <td class="gt_row gt_right" style="background-color: #82C3F8; color: #000000;">9.8</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">21.3</td>
+      <td class="gt_row gt_right" style="background-color: #0F4DA7; color: #FFFFFF;">14.4</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">25.9</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #ABD6FA; color: #000000;">10.7</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">WT</td>
+      <td class="gt_row gt_right" style="background-color: #B4DBFB; color: #000000;">10.3</td>
+      <td class="gt_row gt_right" style="background-color: #85C4F8; color: #000000;">9.5</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #39A0F4; color: #000000;">7.9</td>
+      <td class="gt_row gt_right" style="background-color: #2092EF; color: #000000;">15.7</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #9ACEF9; color: #000000;">11.4</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="8" class="gt_group_heading">Land use variables</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Natural</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #CEE7FC; color: #000000;">3.0</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #2798F3; color: #000000;">8.7</td>
+      <td class="gt_row gt_right" style="background-color: #DFF0FD; color: #000000;">1.3</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Pasture</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #96CDF9; color: #000000;">8.0</td>
+      <td class="gt_row gt_right" style="background-color: #C8E4FC; color: #000000;">22.0</td>
+      <td class="gt_row gt_right" style="background-color: #D6EBFC; color: #000000;">2.1</td>
+      <td class="gt_row gt_right" style="background-color: #CBE6FC; color: #000000;">2.7</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Agriculture</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #CAE5FC; color: #000000;">3.4</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #97CDF9; color: #000000;">4.3</td>
+      <td class="gt_row gt_right" style="background-color: #DFF0FD; color: #000000;">1.3</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #73BCF7; color: #000000;">13.0</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Urban</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">1.0</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #1F8BE8; color: #FFFFFF;">10.0</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">1.0</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="8" class="gt_group_heading">Spatial variables</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">WD</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">40.7</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">34.8</td>
+      <td class="gt_row gt_right" style="background-color: #339DF4; color: #000000;">26.0</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">14.7</td>
+      <td class="gt_row gt_right" style="background-color: #6DB9F7; color: #000000;">8.8</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">72.0</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">24.3</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">FR</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #2092EF; color: #000000;">9.3</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+]
+]
+]
+]]
+---
+class:split-two
+
+.column[.content[
+### Results (Reservoir scale)
+
+- Only FCD showed significant trends
+
+- Niche-based processes drive the patterns of species turnover .tiny[(VILLÉGER; GRENOUILLET; BROSSE, 2013; BRAGHIN et al., 2018)]
+
+- Interplay between dispersal and flow regulation.
+
+- .bold[Water residence time] explained about 8% of the total variance in functional dispersion and total distinctiveness
+
+- .bold[Distance to the nearest dam] was the most importance variable for functional metrics on BRT.
+]]
+
+.column[.content.nopadding[
+.panelset[
+  .panel[.panel-name[Shape of the curve]
+&lt;img src="cap2_fig3.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[Variable importance]
+.tiny[
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#vstsvubmnv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 8px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_heading {
+  background-color: #85C1E9;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_title {
+  color: #FFFFFF;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vstsvubmnv .gt_subtitle {
+  color: #FFFFFF;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vstsvubmnv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #85C1E9;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vstsvubmnv .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #85C1E9;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vstsvubmnv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vstsvubmnv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vstsvubmnv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vstsvubmnv .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #ffffcc;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vstsvubmnv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #ffffcc;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vstsvubmnv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vstsvubmnv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vstsvubmnv .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vstsvubmnv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: dashed;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#vstsvubmnv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vstsvubmnv .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vstsvubmnv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vstsvubmnv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#vstsvubmnv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vstsvubmnv .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#vstsvubmnv .gt_left {
+  text-align: left;
+}
+
+#vstsvubmnv .gt_center {
+  text-align: center;
+}
+
+#vstsvubmnv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vstsvubmnv .gt_font_normal {
+  font-weight: normal;
+}
+
+#vstsvubmnv .gt_font_bold {
+  font-weight: bold;
+}
+
+#vstsvubmnv .gt_font_italic {
+  font-style: italic;
+}
+
+#vstsvubmnv .gt_super {
+  font-size: 65%;
+}
+
+#vstsvubmnv .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="vstsvubmnv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="8" class="gt_heading gt_title gt_font_normal" style>Boosted regression trees at the reservoir scale</th>
+    </tr>
+    <tr>
+      <th colspan="8" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1"></th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">TCD<sub>Total</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">TCD<sub>Turnover</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">TCD<sub>Nestedness</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">FCD<sub>Total</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">FCD<sub>Turnover</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">FCD<sub>Nestedness</sub></span>
+      </th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="1">
+        <span class="gt_column_spanner">F<sub>Dispersion</sub></span>
+      </th>
+    </tr>
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">5.5%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">4.1%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">12.1%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">6.5%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">-4.1%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">4.0%</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">27.8%</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="8" class="gt_group_heading">Local variables</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Turb</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #A4D3FA; color: #000000;">4.60</td>
+      <td class="gt_row gt_right" style="background-color: #B9DDFB; color: #000000;">11.0</td>
+      <td class="gt_row gt_right" style="background-color: #9DD0FA; color: #000000;">14.10</td>
+      <td class="gt_row gt_right" style="background-color: #59AFF6; color: #000000;">14.00</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">27.00</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">NH4</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">20.4</td>
+      <td class="gt_row gt_right" style="background-color: #41A4F5; color: #000000;">11.30</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #D1E9FC; color: #000000;">11.00</td>
+      <td class="gt_row gt_right" style="background-color: #9BCFF9; color: #000000;">8.20</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">SRP</td>
+      <td class="gt_row gt_right" style="background-color: #40A4F5; color: #000000;">32.5</td>
+      <td class="gt_row gt_right" style="background-color: #B7DCFB; color: #000000;">3.40</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">1.80</td>
+      <td class="gt_row gt_right" style="background-color: #B2DAFB; color: #000000;">17.8</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">TP</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #89C6F8; color: #000000;">6.30</td>
+      <td class="gt_row gt_right" style="background-color: #3DA2F5; color: #000000;">20.4</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #D2E9FC; color: #000000;">3.40</td>
+      <td class="gt_row gt_right" style="background-color: #1B7BD8; color: #FFFFFF;">30.9</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Si</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #2597F3; color: #000000;">13.60</td>
+      <td class="gt_row gt_right" style="background-color: #B5DBFB; color: #000000;">11.3</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #85C4F8; color: #000000;">10.00</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">36.4</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">pH</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">47.0</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">24.50</td>
+      <td class="gt_row gt_right" style="background-color: #85C4F8; color: #000000;">14.7</td>
+      <td class="gt_row gt_right" style="background-color: #8DC8F9; color: #000000;">15.00</td>
+      <td class="gt_row gt_right" style="background-color: #6CB8F6; color: #000000;">12.10</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">WT</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #6DB9F7; color: #000000;">8.00</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">34.7</td>
+      <td class="gt_row gt_right" style="background-color: #5BB0F6; color: #000000;">18.00</td>
+      <td class="gt_row gt_right" style="background-color: #9DD0FA; color: #000000;">8.00</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">14.9</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="8" class="gt_group_heading">Land use variables</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Natural</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">0.46</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">40.51</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Pasture</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #1F8DEA; color: #FFFFFF;">15.51</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Agriculture</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Urban</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #D7ECFC; color: #000000;">1.31</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="8" class="gt_group_heading">Spatial variables</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">Damdist</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #CDE7FC; color: #000000;">1.94</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">7.9</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">31.91</td>
+      <td class="gt_row gt_right" style="background-color: #0D47A1; color: #FFFFFF;">34.40</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #50ABF5; color: #000000;">32.47</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub">WRT</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #69B7F6; color: #000000;">8.22</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #E3F2FD; color: #000000;">9.89</td>
+      <td class="gt_row gt_right" style="background-color: #9DD0FA; color: #000000;">8.03</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+      <td class="gt_row gt_right" style="background-color: #808080; color: #000000;">&mdash;</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+]
+]
+]
+]]
+---
+
+
+
+# Conclusions
+
+- Land use changes affected functional community assembly especially when the whole river channel was considered.
+
+- The combination of reservoir attributes (e.g., water outlet, water retention time) with surrounding land use changed the community composition in a way that could be perceived even at larger spatial extents
+
+- Taxonomic diversity metrics are important tools to understand community changes, but none of the major spatial patterns would have been noticed without the functional approach. 
+
+---
+
+class: center, middle, inverse
+
+# .white[Functional similarity at the global scale]
+###  .white[A global synthesis of taxonomic and functional turnover in ecological communities.]
+#### .white[Under review in] .yellow[Ecography]
+
+---
+class:middle, center 
+
+
+### Do functional features explain more of the distance decay along environmental gradients than species identities? 
+
+
+.footnote[.right[(MEYNARD et al., 2011; SPASOJEVIC et al., 2014; WEINSTEIN et al., 2014; JYRKÄNKALLIO-MIKKOLA; HEINO; SOININEN, 2016)].]
+
+---
+class:split-two
+
+
+.column[.content[ 
+### Hypotheses
+
+- Spatial factors relate with taxonomic more than functional composition as a result of dispersal processes.
+
+- β-diversity should decrease with increasing latitude. .tiny[(ROHDE, 1996; DRAKARE; LENNON; HILLEBRAND, 2005; )]
+
+- Distance decay is also likely to be affected by the spatial extent of a given study. .tiny[(STEINBAUER et al., 2012; NEKOLA; MCGILL, 2014)] 
+
+- Distance decay vary among the realms. .tiny[(CLARKE, 1992; CORNELL; HARRISON, 2014)]
+
+]]
+
+.column[.content.vmiddle.center[
+&lt;img src="cap3_fig1.png" width="95%" /&gt;
+
+]]
+---
+class:split-two
+
+.column[.nopadding[
+### Data collection
+&lt;img src="cap3_fig2.png" width="80%" /&gt;
+]]
+
+.column[.content[
+### Data analysis
+&lt;img src="cap3_fig3.png" width="80%" /&gt;
+]]
+---
+class:split-two
+.column[.content[
+### Results
+
+- Taxonomic distance decay is a robust approach for ecological and biogeographical studies
+
+- Functional composition does not strongly reflect dispersal limitations or species pool effects .tiny[(SOININEN et al., 2016)]
+
+- Context-dependency .tiny[(SIEFERT et al., 2013; KRUK et al., 2011; GRACO-ROZA et al., 2020)].
+
+- 40 datasets showed stronger functional than taxonomic decay.
+
+- Terrestrial plants had the steepest slopes along spatial distance both for taxonomic and functional similarities. .bold[no explanation in the literature.]
+
+- Taxonomic variation was higher in space, while functional variation was higher in environmental gradients.
+]]
+.column[.content.nopadding[
+.panelset[
+.panel[.panel-name[Rate of decay]
+&lt;img src="cap3_fig4.png" width="1240" style="display: block; margin: auto;" /&gt;
+]
+.panel[
+.panel-name[Across taxa]
+&lt;img src="cap3_fig5.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+]
+]]
+
+---
+class:split-two
+.column[
+.content[
+### Results
+
+- Latitudinal breakpoint .tiny[(SOININEN; HEINO; WANG, 2018)].
+
+- Fragmentation .tiny[(JAMONEAU et al., 2012)].
+
+- Higher functional diversity at higher latitudes .tiny[(MAY; MACARTHUR, 1972; LAMANNA et al., 2014)]
+
+- Lower rate of decay ar higher spatial extent.
+
+- Environmental filtering and species pool.
+
+- Lowest rate at the marine realm for taxonomic similarity .tiny[(SOININEN; MCDONALD; HILLEBRAND, 2007)].
+
+- Body size patterns (complexity or lack of information?)
+
+- Passive (micro vs. macroorganisms)
+
+]]
+.column[.content.nopadding[
+.panelset[
+.panel[.panel-name[Main hypotheses]
+&lt;img src="cap3_fig6.png" width="1211" /&gt;
+]
+.panel[
+.panel-name[Biological variables]
+&lt;img src="cap3_fig7.png" width="1211" /&gt;
+
+]
+]
+]]
+---
+### Conclusions
+
+- Functional distance decay is scale-dependent
+
+- Distance decays are a product of geographic and biological factors
+
+- Disentangling the contribution of taxonomy and functional features to community variations is challenging.
+
+---
+class:inverse
+
+# General discussion
+
+- High-level processes .tiny[(VELLEND, 2016)].
+
+- Environmental selection acts on species by limiting the range of trait values. .tiny[(WEIHER; KEDDY, 1995; MAYFIELD; LEVINE, 2010)]
+
+- Body size is a powerful feature, but structure may not always be present .tiny[((DOWNING et al., 2014))].
+
+- Trait-hierarchy .tiny[(FORT; CRUZ; JOUANY, 2014; KRAFT et al., 2014)].
+
+- Different traits may perform the same function .tiny[(LITCHMAN; KLAUSMEIER, 2008; LITCHMAN; OHMAN; KIØRBOE, 2013)].
+
+- Dispersal limitation and functional traits.
+
+- Dispersal is often outplayed by selection in the assembly of microorganisms being repeatedly assumed that “everything is everywhere, but the environment selects” .tiny[(BAAS BECKING, 1934)].
+
+
+---
+class:inverse
+# Concluding remarks
+
+
+- At the local scale, trait-based approaches allows the identification of both niche partitioning and trait hierarchy on cluster of species assumed to be neutral, highlighting the role of functional similarity to biotic interactions.
+ 
+- Focusing on species traits rather than species identity allowed assessing the balance between niche and dispersal in cases where only species identity would not be enough. 
+ 
+- Functional similarity of multiple communities is scale-dependent and a product of large-scale geographic factors (latitude), and species and functional `\(\gamma\)`-diversity, but is also driven by organisms’ biology to some degree.
+
+---
+
+class:middle, center 
+
+#Thank you!
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9",
+"navigation": {
+"scroll": false
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
