@@ -63,7 +63,7 @@ knitr::include_graphics("http://www.pgbv.uerj.br/wp-content/uploads/2020/08/crop
 .content[
 <br>
 ```{r, echo=FALSE, fig.align="right", out.width="50%"}
-knitr::include_graphics("helsinki.png")
+knitr::include_graphics("img/helsinki.png")
 ```
 ]
 ]
@@ -200,8 +200,8 @@ plot1
 
 ### .tiny[.center[What if species are similar?]]
 <br>
-```{r, echo=FALSE, out.width="90%", fig.cap = "Source: VANDERMEER 2006", fig.align="center" }
-knitr::include_graphics("neutral.jpg")
+```{r, echo=FALSE, out.width="90%", fig.cap = "Source: ETIENNE et al., 2006", fig.align="center" }
+knitr::include_graphics("img/neutral.jpg")
 ```
 ]
 ]
@@ -213,12 +213,12 @@ knitr::include_graphics("neutral.jpg")
 One can group species in **functional groups**...
 <br>
 ```{r, echo=FALSE, out.width="90%", fig.cap = "Source: KRUK et al. 2010", fig.align="center" }
-knitr::include_graphics("mbfg.png")
+knitr::include_graphics("img/mbfg.png")
 ```
 <br>
 .right[...or measure **individual traits** and match them with environmental template]
-```{r, echo=FALSE, fig.cap="Source: BLONDER et al. 2014", out.width='80%',fig.align='center'}
-knitr::include_graphics("multi_niche.gif")
+```{r, echo=FALSE, fig.cap="Source: BLONDER et al. 2014", out.width='70%',fig.align='center'}
+knitr::include_graphics("img/multi_niche.gif")
 ```
 ]]
 ---
@@ -269,7 +269,7 @@ class:split-three with-border border-black
 .row.bg-light-gray[.content.nopadding[
 <br>
 ```{r, echo=FALSE, fig.cap="", out.width='70%', fig.align='left', fig.cap="Source: SCHEFFER; VAN NES; VERGNON, 2018"}
-knitr::include_graphics("EN_evo.png")
+knitr::include_graphics("img/EN_evo.png")
 ```
 ]]
 ]]
@@ -278,7 +278,7 @@ knitr::include_graphics("EN_evo.png")
 ### .tiny[.center[Modelling evidence]]
 <br>
 ```{r, echo=FALSE, fig.cap="", out.width='70%', fig.align='center', fig.cap="Source: MATTHEWS & WHITTAKER, 2014"}
-knitr::include_graphics("EN.png")
+knitr::include_graphics("img/EN.png")
 ```
 
 ]
@@ -288,8 +288,8 @@ knitr::include_graphics("EN.png")
 .content.nopadding[
 ### .tiny[.center[.white[Empirical evidence]]]
 <br>
-```{r, echo=FALSE, fig.cap="", out.width='70%', fig.align='center', fig.cap="Source: SEGURA et al., 2010"}
-knitr::include_graphics("en_segura.png")
+```{r, echo=FALSE, fig.cap="", out.width='65%', fig.align='center', fig.cap="Source: SEGURA et al., 2010"}
+knitr::include_graphics("img/en_segura.png")
 ```
 ]
 ]
@@ -302,8 +302,8 @@ knitr::include_graphics("en_segura.png")
 ###.black[Body size as niche axis...]
 <br>
 <br>
-```{r, echo=FALSE, fig.cap="", out.width='90%', fig.align='center', fig.cap="Source: SEGURA et al., 2010"}
-knitr::include_graphics("en_bs.png")
+```{r, echo=FALSE, fig.cap="", out.width='100%', fig.align='center', fig.cap="Source: D'ANDREA et al., 2020"}
+knitr::include_graphics("img/en_bs.png")
 ```
 ]
 ]
@@ -343,7 +343,7 @@ Além disso, também seria importante de compreender em quais escalas espaciais 
 
 ---
 layout:true
-class: left, top, split-three with-border 
+class:split-three with-border 
 
 .column[.split-two[
 .row.bg-main1[
@@ -357,8 +357,8 @@ class: left, top, split-three with-border
 ]
 .row[
 .content.nopadding[
-```{r, echo=FALSE, fig.cap="Source: NEKOLA & MCGILL, 2014", out.width="55%", fig.align='center'}
-knitr::include_graphics("DD_nekola.png")
+```{r, echo=FALSE, fig.cap="Source: NEKOLA & MCGILL, 2014", out.width="50%", fig.align='center'}
+knitr::include_graphics("img/DD_nekola.png")
 ```
 ]]
 
@@ -556,21 +556,22 @@ count:false
 ---
 
 layout:false
-class:left, top
-.left-column[
+class:split-30
+.column[.content[
 ### Methods
 Nine sampling sites along the river channel
 
 Monthly samples between May 2012 - Apr 2013
 
-<img style="position: absolute; bottom:4em; left=0em" src="img/map_cap1.png"; width="25%">
-
-]
-.right-column[
-```{r, echo=FALSE, out.width="95%", fig.align="right"}
+```{r, echo=FALSE, out.width="100%", fig.align="center"}
+knitr::include_graphics("img/map_cap1.png")
+```
+]]
+.column[.content.nopadding[
+```{r, echo=FALSE, out.width="100%", fig.align="right"}
 knitr::include_graphics("img/method_cap1.png")
 ```
-]
+]]
 ---
 class:top
 # Results
@@ -595,28 +596,33 @@ knitr::kable(data.frame("MBFG" = c("I","III","IV","V","VI","VII"),
 ```
 
 ---
-class:split-two
+class:split-30
 
-.column[.content[
+.column[.split-five[
+.row.bg-main1[.content[
 #Results
-
-- Axes summarised spatial and seasonal patterns;
-
-- Functional groups did not overlap;
-
-- Silica, flagella and size-related traits were the most important.
-
-- MBFG VI = Silica; MBFG V = Flagella, MBFG IV = size-traits;
-
+]]
+.row.bg-main2[.content[
+ Axes summarised spatial and seasonal patterns;
+]]
+.row.bg-main3[.content[
+Functional groups did not overlap;
+]]
+.row.bg-main4[.content[
+Silica, flagella and size-related traits were the most important.
+]]
+.row.bg-main5[.content[
+MBFG VI = Silica; MBFG V = Flagella, MBFG IV = size-traits;
+]]
 ]]
 .column[.content.vmiddle.center[
 ```{r, echo=FALSE, out.width="100%"}
-knitr::include_graphics("cap1_rlq.png")
+knitr::include_graphics("img/cap1_rlq.png")
 ```
 ]]
 
 ---
-class:split-two
+class:split-40
 layout:true
 
 .column[.split-five[
@@ -644,12 +650,13 @@ layout:true
 .panelset[
   .panel[.panel-name[Seasonal]
 ```{r, echo=FALSE}
-knitr::include_graphics("cap1_clump_season.png")
+knitr::include_graphics("img/cap1_clump_season.png")
 ```
 ]
   .panel[.panel-name[Spatial]
-```{r, echo=FALSE}
-knitr::include_graphics("cap1_clump_spatial.png")
+
+```{r, echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics("img/cap1_clump_spatial.png")
 ```
 ]
   .panel[.panel-name[Mantel]
@@ -792,13 +799,7 @@ class:split-two
  
  - Use of MBFGs and trait dimensions helps to unveil the quasi-neutral patterns.
 ]]
-.row[.content[
-### Future directions
 
- - Empirical studies of long-term data at finer sample scale.
- 
- - Include intraspecific trait variations?
-]]
 ---
 class: hide-row2
 count:true
@@ -900,12 +901,12 @@ Watercourse distance and distance from the dam.
 .panelset[
   .panel[.panel-name[Map]
 ```{r, echo=FALSE, out.width='100%', fig.align='center', fig.cap="Souce: GRACO-ROZA et al. 2020"}
-knitr::include_graphics("cap2_map.png")
+knitr::include_graphics("img/cap2_map.png")
 ```
 ]
 .panel[.panel-name[Reservoirs]
 ```{r, echo=FALSE, out.width='100%', fig.align='center', fig.cap="Souce: GRACO-ROZA et al. 2020"}
-knitr::include_graphics("cap2_table1.png")
+knitr::include_graphics("img/cap2_table1.png")
 ```
 ]
 .panel[.panel-name[Variables]
@@ -1115,7 +1116,7 @@ class:split-two
 .panelset[
   .panel[.panel-name[Shape of the curve]
 ```{r, echo=FALSE, out.width='100%', fig.align="center"}
-knitr::include_graphics("cap2_fig3.png")
+knitr::include_graphics("img/cap2_fig3.png")
 ```
 ]
 .panel[.panel-name[Variable importance]
@@ -1219,7 +1220,7 @@ class:split-two
 
 .column[.content.vmiddle.center[
 ```{r,echo=FALSE, out.width="95%"}
-knitr::include_graphics('cap3_fig1.png')
+knitr::include_graphics('img/cap3_fig1.png')
 ```
 
 ]]
@@ -1229,18 +1230,18 @@ class:split-two
 .column[.nopadding[
 ### Data collection
 ```{r,echo=FALSE, out.width="80%"}
-knitr::include_graphics('cap3_fig2.png')
+knitr::include_graphics('img/cap3_fig2.png')
 ```
 ]]
 
 .column[.content[
 ### Data analysis
 ```{r,echo=FALSE, out.width="80%"}
-knitr::include_graphics('cap3_fig3.png')
+knitr::include_graphics('img/cap3_fig3.png')
 ```
 ]]
 ---
-class:split-two
+class:split-40
 .column[.content[
 ### Results
 
@@ -1260,13 +1261,13 @@ class:split-two
 .panelset[
 .panel[.panel-name[Rate of decay]
 ```{r, echo=FALSE, fig.align="center"}
-knitr::include_graphics('cap3_fig4.png')
+knitr::include_graphics('img/cap3_fig4.png')
 ```
 ]
 .panel[
 .panel-name[Across taxa]
-```{r, echo=FALSE, out.width="80%", fig.align="center"}
-knitr::include_graphics('cap3_fig5.png')
+```{r, echo=FALSE, out.width="70%", fig.align="center"}
+knitr::include_graphics('img/cap3_fig5.png')
 ```
 
 ]
@@ -1274,7 +1275,7 @@ knitr::include_graphics('cap3_fig5.png')
 ]]
 
 ---
-class:split-two
+class:split-40
 .column[
 .content[
 ### Results
@@ -1300,13 +1301,13 @@ class:split-two
 .panelset[
 .panel[.panel-name[Main hypotheses]
 ```{r, echo=FALSE}
-knitr::include_graphics('cap3_fig6.png')
+knitr::include_graphics('img/cap3_fig6.png')
 ```
 ]
 .panel[
 .panel-name[Biological variables]
 ```{r, echo=FALSE}
-knitr::include_graphics('cap3_fig7.png')
+knitr::include_graphics('img/cap3_fig7.png')
 ```
 
 ]
